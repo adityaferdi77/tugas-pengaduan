@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  body {
+    background-image: url('https://i.postimg.cc/pTzwqsqw/Whats-App-Image-2023-01-30-at-3-06-13-PM.jpg');
+  }
