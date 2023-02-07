@@ -45,7 +45,8 @@
                                     <div class="badge badge-warning text-white">Sedang Di Proses</div>
                                     </td>
                                     @else
-                                    <div class="badge badge-success">Selesai</div>
+                                    {{-- <div class="badge badge-success">Selesai</div> --}}
+                                    <center> <span class="badge rounded-pill badge text-bg-success">Selesai</span> </center>
                                     @endif
                                     </td>
                                 </tr>
