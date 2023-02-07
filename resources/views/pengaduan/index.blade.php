@@ -31,13 +31,15 @@
                                     <td>{{$item->tanggal_pengaduan}}</td>
                                     <td>
                                         @if ($item->status === '0')
-                                        <div class="badge badge-danger">Belum Terverifikasi</div>
+                                        {{-- <div class="badge badge-danger">Belum Terverifikasi</div> --}}
+                                        <span class="badge rounded-pill badge text-bg-danger">Belum Terverifikasi</span>
                                     </td>
                                     @elseif($item->status == 'proses')
                                     <div class="badge badge-warning text-white">Sedang Di Proses</div>
                                     </td>
                                     @else
-                                    <div class="badge badge-success">Selesai</div>
+                                    {{-- <div class="badge badge-success">Selesai</div> --}}
+                                    <center> <span class="badge rounded-pill badge text-bg-success">Selesai</span> </center>
                                     @endif
                                     </td>
                                     <td>
