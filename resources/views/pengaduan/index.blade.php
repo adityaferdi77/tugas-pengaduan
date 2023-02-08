@@ -43,13 +43,15 @@
                                     @endif
                                     </td>
                                     <td>
+                                        @auth('petugas')
                                         @if ($item->status === '0' || $item->status == 'proses')
                                         <a href="{{route('pengaduan.show', \Crypt::Encrypt($item->id))}}"
                                             class="btn btn-sm btn-success mx-2 my-2">Beri Tanggapan</a>
                                         @endif
+                                        @endauth
                                         <a href="{{route('pengaduan.detail', \Crypt::Encrypt($item->id))}}"
                                             class="btn btn-sm btn-primary mx-2 my-2">Detail</a>
-                                        
+
                                     </td>
                                 </tr>
                                 {{ $pengaduan->links() }}

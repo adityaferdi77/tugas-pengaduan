@@ -11,7 +11,7 @@ class AuthController extends Controller
     public function login_masyarakat()
     {
         return view('auth.login_masyarakat');
-    } 
+    }
 
     public function hadleLoginMasyarakat(Request $request)
     {
@@ -24,12 +24,12 @@ class AuthController extends Controller
         }else{
             return redirect()->back()->with('danger', 'Username atau Password anda Salah');
         }
-    } 
+    }
 
     public function login_petugas()
     {
         return view('auth.login_petugas');
-    } 
+    }
 
 
     public function hadleLoginPetugas(Request $request)
@@ -43,13 +43,13 @@ class AuthController extends Controller
         }else{
             return redirect()->back()->with('danger', 'Username atau Password anda Salah');
         }
-    } 
+    }
 
     /*
     * Register User
     */
     public function register_masyarakat(Request $request)
-    {   
+    {
         return view('auth.register_masyarakat');
     }
 
@@ -57,7 +57,7 @@ class AuthController extends Controller
     {
         $request->validate([
             'username' => 'required|unique:masyarakat',
-            'nik' => 'required|size:16|unique:masyarakat',
+            'nik' => 'required|size:10|unique:masyarakat',
             'nama' => 'required',
             'password' => 'required|confirmed',
             'no_telp' => 'required|max:13'
