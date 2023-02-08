@@ -20,7 +20,7 @@ class MasyarakatSeeder extends Seeder
         // $table->string('password');
         // $table->string('no_telp', 13);
         \DB::table('masyarakat')->insert([
-            'nik' => 1234567890987654,
+            'nik' => ,
             'username' => 'masyarakat1',
             'password' => bcrypt('masyarakat1'),
             'nama' => 'masyarakat1',
