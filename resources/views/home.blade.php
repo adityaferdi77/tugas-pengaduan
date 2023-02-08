@@ -13,7 +13,7 @@
               {{-- Silahkan Login Untuk Berpartisipasi --}}
               <marquee behavior="" direction="">
                 <h4 class="fw-bold">
-                    <span class="text-brand ">Pengaduan masyarakat adalah penyampaian keluhan oleh masyarakat kepada pemerintah atas pelayanan yang tidak sesuai dengan standar pelayanan, atau pengabaian kewajiban dan/atau pelanggaran larangan.</span>
+                    <span class="text-brand text-warning">Pengaduan masyarakat adalah penyampaian keluhan oleh masyarakat kepada pemerintah atas pelayanan yang tidak sesuai dengan standar pelayanan, atau pengabaian kewajiban dan/atau pelanggaran larangan.</span>
                 </h4>
             </marquee>
           </div>
