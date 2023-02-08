@@ -9,6 +9,7 @@
         <div class="account-box">
           <div class="login-header">
         <div class="card shadow">
+<<<<<<< HEAD
           <div class="card-body bg-black text-white"><center>
               <marquee behavior="" direction="">
                 <h4 class="fw-bold">
@@ -16,6 +17,11 @@
                 </h4>
               </marquee>
           </center></div>
+=======
+          <div class="card-body bg-black text-warning">
+          <marquee direction="up" scrollamount="2" behavior="alternate" width="90%"><marquee direction="right" behavior="alternate"> Silahkan Masukan Akun Anda </marquee></marquee>
+        </div>
+>>>>>>> 3c8eeda84e293721e70a03bac5dacc5d592652f7
           <div class="card-body mx-auto">
               <a href="{{url('/masyarakat/login')}}" class="btn btn-danger text-white">Login Masyarakat</a>
               <a href="{{url('/petugas/login')}}" class="btn btn-info text-white">Login Petugas</a>
