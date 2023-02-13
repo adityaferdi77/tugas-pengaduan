@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.index')
 
 @section('title', 'Tambah Petugas | Sistem Pengaduan Masyarakat')
 @section('content')
@@ -10,7 +10,7 @@
         @endif
         <div class="card shadow">
           <div class="card-header text-left">
-              <strong>Tambah Data Petugas</strong>
+              <strong>Tambah Data petugas</strong>
           </div>
           <div class="card-body">
             <form action="{{route('petugas.store')}}" method="post">
@@ -18,35 +18,35 @@
               <div class="form-group">
                 <label for="username">Nama Petugas</label>
                 <input type="text" class="form-control @error('nama_petugas') is-invalid @enderror"  name="nama_petugas" placeholder="masukan nama_petugas anda" value="{{old('nama_petugas')}}">
-                @error('nama_petugas')
+                @error('nama_petugas') 
                   <div class="invalid-feedback">{{$message}}</div>
                 @enderror
               </div>
               <div class="form-group">
                 <label for="username">No Telp</label>
                 <input type="number" class="form-control @error('no_telp') is-invalid @enderror"  name="no_telp" placeholder="masukan No Telp anda" value="{{old('no_telp')}}">
-                @error('no_telp')
+                @error('no_telp') 
                   <div class="invalid-feedback">{{$message}}</div>
                 @enderror
               </div>
               <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" placeholder="masukan username anda">
-                @error('username')
+                @error('username') 
                 <div class="invalid-feedback">{{$message}}</div>
               @enderror
               </div>
               <div class="form-group">
                 <label for="username">Password</label>
                 <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="masukan password anda">
-                @error('password')
+                @error('password') 
                   <div class="invalid-feedback">{{$message}}</div>
                 @enderror
               </div>
               <div class="form-group">
                 <label for="username">Konfirmasi Password</label>
                 <input type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" placeholder="masukan password sekali lagi">
-                @error('password')
+                @error('password') 
                   <div class="invalid-feedback">{{$message}}</div>
                 @enderror
               </div>
@@ -57,7 +57,7 @@
                   <option value="admin">admin</option>
                   <option value="petugas">petugas</option>
                 </select>
-                @error('level')
+                @error('level') 
                 <div class="invalid-feedback">{{$message}}</div>
               @enderror
               </div>
