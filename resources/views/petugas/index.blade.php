@@ -1,4 +1,4 @@
-@extends('layouts.index')
+@extends('layout')
 
 @section('title', ' Daftar Petugas | Sistem Pengaduan Masyarakat')
 @section('content')
