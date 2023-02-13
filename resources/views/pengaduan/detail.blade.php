@@ -14,6 +14,9 @@
                         <li class="list-group-item"><strong>Judul Pengaduan</strong> : <div class="float-right">
                                 {{$pengaduan->judul_pengaduan}}</div>
                         </li>
+                        <li class="list-group-item"><strong>Lokasi Kejadian</strong> : <div class="float-right">
+                            {{$pengaduan->lokasi_kejadian}}</div>
+                    </li>
                         <li class="list-group-item"><strong>Tanggal Pengadun</strong>: <div class="float-right">
                                 {{$pengaduan->tanggal_pengaduan}}</div>
                         </li>

@@ -10,7 +10,7 @@ class Pengaduan extends Model
 {
     use HasFactory, SoftDeletes;
     protected $table = 'pengaduan';
-    protected $fillable = ['judul_pengaduan', 'tanggal_pengaduan', 'nik', 'isi_laporan', 'foto', 'status'];
+    protected $fillable = ['judul_pengaduan', 'lokasi_kejadian', 'tanggal_pengaduan', 'nik', 'isi_laporan', 'foto', 'status'];
 
 
     public function masyarakat()

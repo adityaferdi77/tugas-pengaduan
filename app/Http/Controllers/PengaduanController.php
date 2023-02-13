@@ -23,7 +23,7 @@ class PengaduanController extends Controller
           'pengaduan' => Pengaduan::with('masyarakat')->orderby('created_at', 'desc')->paginate(10),
         ]);
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -45,6 +45,7 @@ class PengaduanController extends Controller
         // return $request;
         $request->validate([
             'judul_pengaduan' => 'required',
+            'lokasi_kejadian' => 'required',
             'isi_laporan' => 'required',
             'foto' => 'required|image|mimes:jpg,png,gif,jpeg,svg|max:2048'
         ]);
@@ -54,6 +55,7 @@ class PengaduanController extends Controller
         Pengaduan::create([
             'judul_pengaduan' => $request->judul_pengaduan,
             'isi_laporan' => $request->isi_laporan,
+            'lokasi_kejadian' => $request->lokasi_kejadian,
             'foto' => $berkas,
             'tanggal_pengaduan' => now(),
             'nik' => $request->nik,
@@ -63,7 +65,7 @@ class PengaduanController extends Controller
     }
 
     /**
-     * memberi tanggapan.  
+     * memberi tanggapan.
      *
      * @param  \App\Models\Pengaduan  $pengaduan
      * @return \Illuminate\Http\Response
@@ -76,7 +78,7 @@ class PengaduanController extends Controller
         return view('pengaduan.create_tanggapan', ['pengaduan' => Pengaduan::with('tanggapan')->where('id', $dec)->first()]);
     }
  /**
-     * detail pengaduan.  
+     * detail pengaduan.
      *
      * @param  \App\Models\Pengaduan  $pengaduan
      * @return \Illuminate\Http\Response

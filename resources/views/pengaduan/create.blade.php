@@ -17,14 +17,21 @@
                 @csrf
                 <div class="form-group">
                   <label for="">Judul Pengaduan</label>
-                  <input type="text" class="form-control @error('judul_pengaduan') is-invalid @enderror" name="judul_pengaduan" placeholder="Judul Pengaduan Anda" value="{{old('judul_pengaduan')}}">
+                  <input type="text" autocomplete="off" class="form-control @error('judul_pengaduan') is-invalid @enderror" name="judul_pengaduan" placeholder="Judul Pengaduan Anda" value="{{old('judul_pengaduan')}}">
                   @error('judul_pengaduan')
                     <div class="invalid-feedback">{{$message}}</div>
                   @enderror
                 </div>
                 <div class="form-group">
+                    <label for="">Lokasi Kejadian</label>
+                    <input type="text" autocomplete="off" class="form-control @error('lokasi_kejadian') is-invalid @enderror" name="lokasi_kejadian" placeholder="Lokasi Kejadian Anda" value="{{old('lokasi_kejadian')}}">
+                    @error('judul_pengaduan')
+                      <div class="invalid-feedback">{{$message}}</div>
+                    @enderror
+                  </div>
+                <div class="form-group">
                   <label for="">NIK</label>
-                  <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik" value="{{\Auth::guard('masyarakat')->user()->nik}}" readonly value="{{old('nik')}}"> 
+                  <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik" value="{{\Auth::guard('masyarakat')->user()->nik}}" readonly value="{{old('nik')}}">
                 </div>
                 <div class="form-group">
                   <label for="">Isi Laporan Anda</label>

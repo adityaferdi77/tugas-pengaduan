@@ -2,9 +2,9 @@
 
 @section('title', ' Daftar Pengaduan | Sistem Pengaduan Masyarakat')
 @section('content')
-<div class="container mt-5">
-    <div class="row mt-5 justify-content-center">
-        <div class="col-md-12">
+<div class="container mt-6">
+    <div class="row mt-6 justify-content-center">
+        <div class="col-md-15">
             <div class="card shadow">
                 <div class="card-header text-center">
                     <strong>Daftar Pengaduan Yang Masuk</strong>
@@ -16,6 +16,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Judul Pengaduan</th>
+                                    <th>Lokasi Kejadian</th>
                                     <th>Nama Pelapor</th>
                                     <th>Tanggal Pengaduan</th>
                                     <th>Status</th>
@@ -27,6 +28,7 @@
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$item->judul_pengaduan}}</td>
+                                    <td>{{$item->lokasi_kejadian}}</td>
                                     <td>{{$item->masyarakat->nama}}</td>
                                     <td>{{$item->tanggal_pengaduan}}</td>
                                     <td>
