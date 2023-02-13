@@ -5,9 +5,9 @@
     <div class="sidebar-inner slimscroll">
         <div id="sidebar-menu" class="sidebar-menu">
             <ul>
-                <li class="menu-title">
+                {{-- <li class="menu-title">
                     <span>Main Menu</span>
-                </li>
+                </li> --}}
                 @auth('masyarakat')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('home/masyarakat') }}">

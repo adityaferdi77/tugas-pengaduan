@@ -43,7 +43,7 @@
     </div>
   </div>
 @endsection --}}
-@extends('layout')
+@extends('layouts.index')
 
 @section('title', 'Sistem Pengaduan Masyarakat | Kirim Tanggapan')
 @section('content')
@@ -65,11 +65,11 @@
                 </div>
                 <div class="form-group">
                     <label for="">Lokasi Kejadian</label>
-                    <input type="text" readonly class="form-control @error('lokasi_kejadian') is-invalid @enderror" name="judul_pengaduan" placeholder="Lokasi Kejadian Anda" value="{{$pengaduan->lokasi_kejadian}}">
+                    <input type="text" readonly class="form-control @error('lokasi_kejadian') is-invalid @enderror" name="lokasi_kejadian" placeholder="Lokasi Kejadian Anda" value="{{$pengaduan->lokasi_kejadian}}">
                   </div>
                 <div class="form-group">
                   <label for="">Nama Pelapor</label>
-                  <input type="text" readonly class="form-control @error('judul_pengaduan') is-invalid @enderror" name="judul_pengaduan" placeholder="Judul Pengaduan Anda" value="{{$pengaduan->judul_pengaduan}}">
+                  <input type="text" readonly class="form-control @error('masyarakat->nama') is-invalid @enderror" name="masyarakat->nama" placeholder="Nama Pelapor" value="{{$pengaduan->masyarakat->nama}}">
                 </div>
                 <div class="form-group">
                   <label for="">NIK</label>
