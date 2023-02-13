@@ -64,6 +64,10 @@
                   <input type="text" readonly class="form-control @error('judul_pengaduan') is-invalid @enderror" name="judul_pengaduan" placeholder="Judul Pengaduan Anda" value="{{$pengaduan->judul_pengaduan}}">
                 </div>
                 <div class="form-group">
+                    <label for="">Lokasi Kejadian</label>
+                    <input type="text" readonly class="form-control @error('lokasi_kejadian') is-invalid @enderror" name="judul_pengaduan" placeholder="Lokasi Kejadian Anda" value="{{$pengaduan->lokasi_kejadian}}">
+                  </div>
+                <div class="form-group">
                   <label for="">Nama Pelapor</label>
                   <input type="text" readonly class="form-control @error('judul_pengaduan') is-invalid @enderror" name="judul_pengaduan" placeholder="Judul Pengaduan Anda" value="{{$pengaduan->judul_pengaduan}}">
                 </div>
@@ -95,7 +99,7 @@
             <strong>Tanggapan</strong>
           </div>
           <div class="card-body">
-            status laporan :   
+            status laporan :
             @if ($pengaduan->status === '0')
                 <div class="badge badge-danger my-2">Belum Terverifikasi</div></td>
               @elseif($pengaduan->status == 'proses')

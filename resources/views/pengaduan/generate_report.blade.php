@@ -33,6 +33,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Judul Pengaduan</th>
+                                <th>Lokasi Kejadian</th>
                                 <th>Nama Pelapor</th>
                                 <th>Tanggal Pengaduan</th>
                                 <th>Foto</th>
@@ -47,6 +48,7 @@
                             <tr>
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$item->pengaduan->judul_pengaduan}}</td>
+                                <td>{{$item->pengaduan->lokasi_kejadian}}</td>
                                 <td>{{$item->pengaduan->masyarakat->nama}}</td>
                                 <td>{{$item->pengaduan->tanggal_pengaduan}}</td>
                                 <td><img src="{{asset($item->pengaduan->foto)}}" width="100px" alt=""></td>
