@@ -27,6 +27,19 @@ class MasyarakatSeeder extends Seeder
             'password' => bcrypt('masyarakat1'),
             'nama' => 'masyarakat1',
             'no_telp' => '080987654321'
+        // DB::table('masyarakat')->insert([
+        //     'nik' => 1234567890987654,
+        //     'username' => 'tes',
+        //     'password' => bcrypt('tes'),
+        //     'nama' => 'Masyarakat',
+        //     'no_telp' => 1234567890987
+
+        // /DB::table('masyarakat')->insert([
+        //     'nik' => 1234567890,
+        //     'username' => 'masyarakat1',
+        //     'password' => bcrypt('masyarakat1'),
+        //     'nama' => 'masyarakat1',
+        //     'no_telp' => 080987654321
         ]);
     }
 }

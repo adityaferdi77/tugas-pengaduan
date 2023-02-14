@@ -54,8 +54,8 @@ class PengaduanController extends Controller
         $data['foto'] = $berkas;
         Pengaduan::create([
             'judul_pengaduan' => $request->judul_pengaduan,
+            'lokasi_kejadian'   => $request->lokasi_kejadian,
             'isi_laporan' => $request->isi_laporan,
-            'lokasi_kejadian' => $request->lokasi_kejadian,
             'foto' => $berkas,
             'tanggal_pengaduan' => now(),
             'nik' => $request->nik,

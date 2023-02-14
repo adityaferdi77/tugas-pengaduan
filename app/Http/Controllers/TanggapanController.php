@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\{Tanggapan,Pengaduan};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 class TanggapanController extends Controller
 {
@@ -33,7 +34,7 @@ class TanggapanController extends Controller
             'id_pengaduan' => $id,
             'tanggal_tanggapan' => now(),
             'tanggapan' => $request->tanggapan,
-            'id_petugas' => \Auth::guard('petugas')->user()->id
+            'id_petugas' => Auth::guard('petugas')->user()->id
         ]);
         $pengaduan = Pengaduan::where(['id' => $id])->update(['status' => 'selesai']);
         // dd($pengaduan);

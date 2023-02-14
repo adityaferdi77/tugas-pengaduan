@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.index')
 
 @section('title', 'Buat Pengaduan | Sistem Pengaduan Masyarakat')
 @section('content')
@@ -25,7 +25,7 @@
                 <div class="form-group">
                     <label for="">Lokasi Kejadian</label>
                     <input type="text" autocomplete="off" class="form-control @error('lokasi_kejadian') is-invalid @enderror" name="lokasi_kejadian" placeholder="Lokasi Kejadian Anda" value="{{old('lokasi_kejadian')}}">
-                    @error('judul_pengaduan')
+                    @error('lokasi_kejadian')
                       <div class="invalid-feedback">{{$message}}</div>
                     @enderror
                   </div>

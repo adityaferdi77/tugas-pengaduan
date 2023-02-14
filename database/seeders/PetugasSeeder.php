@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
 class PetugasSeeder extends Seeder
@@ -13,14 +13,14 @@ class PetugasSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('petugas')->insert([
+        DB::table('petugas')->insert([
             'username' => '',
             'nama_petugas' => 'petugas1',
             'password' => bcrypt('petugas1'),
             'no_telp' => 1234567892987,
             'level' => 'petugas'
         ]);
-        \DB::table('petugas')->insert([
+        DB::table('petugas')->insert([
             'username' => 'admin',
             'nama_petugas' => 'admin',
             'password' => bcrypt('admin'),
