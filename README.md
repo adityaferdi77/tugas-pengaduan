@@ -11,7 +11,7 @@ hallo
 
 # overview project
 
-![Login](public/img/preview.terbaru.png)
+![Login](public/img/login-baru.png)
 ![Admin](public/img/preview-admin.png)
 
 ## Prerequiste
