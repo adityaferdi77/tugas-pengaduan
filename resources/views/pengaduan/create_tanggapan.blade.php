@@ -69,7 +69,7 @@
                   </div>
                 <div class="form-group">
                   <label for="">Nama Pelapor</label>
-                  <input type="text" readonly class="form-control @error('judul_pengaduan') is-invalid @enderror" name="judul_pengaduan" placeholder="Judul Pengaduan Anda" value="{{$pengaduan->judul_pengaduan}}">
+                  <input type="text" readonly class="form-control @error('masyarakat->nama') is-invalid @enderror" name="masyarakat->nama" placeholder="Nama Pelapor" value="{{$pengaduan->masyarakat->nama}}">
                 </div>
                 <div class="form-group">
                   <label for="">NIK</label>
@@ -113,8 +113,8 @@
               @error('tanggapan')
               <div class="invalid-feedback">{{$message}}</div>
             @enderror
-              <button class="btn btn-primary my-2" @if($pengaduan->tanggapan) disabled @endif>Kirim Tanggapan</button>
-              <a href="{{route('pengaduan.index')}}" class="btn btn-danger">Kembali</a>
+              <button type="submit" class="btn btn-primary my-2">Kirim Tanggapan</button>
+              <a href="{{route('pengaduan.index')}}" class="btn btn-danger mt-2">Kembali</a>
             </form>
           </div>
         </div>
