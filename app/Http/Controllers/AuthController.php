@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Masyarakat;
+
 class AuthController extends Controller
 {
 
@@ -19,9 +20,9 @@ class AuthController extends Controller
             'username' => 'required',
             'password' => 'required'
         ]);
-        if(Auth::guard('masyarakat')->attempt(['username' => $request->username,'password' => $request->password])){
+        if (Auth::guard('masyarakat')->attempt(['username' => $request->username, 'password' => $request->password])) {
             return redirect('/home/masyarakat');
-        }else{
+        } else {
             return redirect()->back()->with('danger', 'Username atau Password anda Salah');
         }
     }
@@ -38,9 +39,9 @@ class AuthController extends Controller
             'username' => 'required',
             'password' => 'required'
         ]);
-        if(Auth::guard('petugas')->attempt(['username' => $request->username,'password' => $request->password])){
+        if (Auth::guard('petugas')->attempt(['username' => $request->username, 'password' => $request->password])) {
             return redirect('/home/petugas');
-        }else{
+        } else {
             return redirect()->back()->with('danger', 'Username atau Password anda Salah');
         }
     }

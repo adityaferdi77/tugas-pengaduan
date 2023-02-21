@@ -1,6 +1,6 @@
 @extends('layoutdas')
 
-@section('title', 'Login Masyarakat | Sistem Pengaduan Masyarakat')
+@section('title', 'Login Petugas | Sistem Pengaduan Masyarakat')
 @section('content')
 
     <!DOCTYPE html>

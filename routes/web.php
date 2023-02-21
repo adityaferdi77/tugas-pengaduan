@@ -12,22 +12,26 @@ use App\Http\Controllers\{PagesController,AuthController,PengaduanController, Ta
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::group(['middleware' => 'revalidate'], function()
+{
+
 Route::get('/', [PagesController::class, 'index']);
 Route::group(['prefix' => 'masyarakat'], function(){
   Route::get('/login', [AuthController::class, 'login_masyarakat']);
   Route::get('/register', [AuthController::class, 'register_masyarakat']);
   Route::post('/register', [AuthController::class, 'HandleRegisterMasyarakat']);
   Route::post('/login', [AuthController::class, 'hadleLoginMasyarakat']);
-  Route::get('/logout', [AuthController::class, 'logout_masyarakat']);
+  Route::get('/logout', [AuthController::class, 'logout_masyarakat'])->middleware('auth:masyarakat');
 });
 Route::group(['prefix' => 'petugas'], function(){
   Route::get('/login', [AuthController::class, 'login_petugas']);
   Route::post('/login', [AuthController::class, 'hadleLoginPetugas']);
-  Route::get('/logout', [AuthController::class, 'logout_petugas']);
+  Route::get('/logout', [AuthController::class, 'logout_petugas'])->middleware('auth:petugas');
 });
 Route::resource('petugas', UserController::class)->middleware('rolePetugasCheck');
 Route::group(['middleware' => 'auth:petugas'], function(){
-  Route::get('/home/petugas', [PagesController::class, 'dashboard_petugas']);
+  Route::get('/home/petugas', [PagesController::class, 'dashboard_petugas'])->middleware('auth:petugas');
   Route::get('tanggapan/{pengaduan_id}', [TanggapanController::class, 'index']);
   Route::post('tanggapan/{id_pengaduan}', [TanggapanController::class, 'store']);
 });
@@ -36,5 +40,6 @@ Route::get('pengaduan/detail/{id}', [PengaduanController::class, 'detail'])->nam
 Route::get('report', [ReportController::class, 'index']);
 Route::get('generate_report', [ReportController::class, 'generate_report']);
 Route::group(['middleware' => 'auth:masyarakat'], function(){
-  Route::get('/home/masyarakat', [PagesController::class, 'dashboard_masyarakat']);
+  Route::get('/home/masyarakat', [PagesController::class, 'dashboard_masyarakat'])->middleware('auth:masyarakat');
+});
 });
