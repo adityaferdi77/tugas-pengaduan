@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{PagesController,AuthController,PengaduanController, TanggapanController, UserController, ReportController};
+use App\Http\Controllers\{MasyarakatController, PagesController,AuthController,PengaduanController, TanggapanController, UserController, ReportController};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +31,8 @@ Route::group(['prefix' => 'petugas'], function(){
 });
 Route::resource('petugas', UserController::class)->middleware('rolePetugasCheck');
 Route::group(['middleware' => 'auth:petugas'], function(){
+  Route::resource('masyarakat', MasyarakatController::class);
+  
   Route::get('/home/petugas', [PagesController::class, 'dashboard_petugas'])->middleware('auth:petugas');
   Route::get('tanggapan/{pengaduan_id}', [TanggapanController::class, 'index']);
   Route::post('tanggapan/{id_pengaduan}', [TanggapanController::class, 'store']);

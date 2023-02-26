@@ -29,7 +29,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="no_telp">NO Telepon</label>
-                                <input type="number" value="{{ old('no_telp') }}" name="no_telp" id="no_telp"
+                                <input type="number" readonly value="{{ $petugas->no_telp }}" name="no_telp" id="no_telp"
                                     class="form-control" required>
                             </div>
                             <div class="form-group">

@@ -11,7 +11,9 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
+                        @auth('masyarakat')
                         <a href="{{ asset('') }}pengaduan/create" class="btn btn-sm btn-primary mx-2 my-2">Tambah Pengaduan</a>
+                        @endauth
                         <table class="table table-bordered">
                             <thead>
                                 <tr>

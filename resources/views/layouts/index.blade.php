@@ -32,7 +32,16 @@
                     @if (auth()->guard('petugas')->user()->level === 'admin')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('petugas') }}">
-                                <i class="bi bi-chat"></i><span> Data Petugas</span>
+                                <i class="bi bi-people"></i><span> Data Petugas</span>
+                            </a>
+                        </li>
+                    @endif
+                @endauth
+                @auth('petugas')
+                    @if (auth()->guard('petugas')->user()->level === 'admin')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('masyarakat') }}">
+                                <i class="bi bi-people"></i><span> Data Masyarakat</span>
                             </a>
                         </li>
                     @endif
@@ -49,7 +58,7 @@
                 @auth('petugas')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('pengaduan') }}">
-                            <i class="bi bi-people"></i><span> Data Pengaduan</span>
+                            <i class="bi bi-chat"></i><span> Data Pengaduan</span>
                         </a>
                     @endauth
             </ul>
