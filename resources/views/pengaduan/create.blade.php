@@ -41,9 +41,10 @@
                 @enderror
                 </div>
                 <div class="form-group">
-                  <label for="">Foto / Berkas Pendukung</label>
-                  <input type="file" name="foto" accept="image/*" class="form-control @error('foto') is-invalid @enderror" placeholder="Masukkan Berkas Pendukung/Foto Jika ada">
-                </div>
+                  <label for="foto" class="form-label">Kirim Foto :</label>
+                  <img src="" alt="" class="img-preview img-fluid form-group col-sm-5" >
+                  <input class="@error('foto') is-invalid @enderror" type="file" id="foto" name="foto" onchange="previewImage()" accept="image/*">
+              </div>
                 @error('foto')
                 <div class="invalid-feedback">{{$message}}</div>
               @enderror
@@ -54,4 +55,19 @@
       </div>
     </div>
   </div>
+  <script>
+    function previewImage() {
+        const image = document.querySelector('#foto')
+        const imgPreview = document.querySelector('.img-preview')
+        
+        imgPreview.style.display = 'block'
+
+        const oFReader = new FileReader()
+        oFReader.readAsDataURL(image.files[0])
+
+        oFReader.onload = function (oFREvent) {
+            imgPreview.src = oFREvent.target.result
+        }
+    }
+</script>
 @endsection
