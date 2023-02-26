@@ -11,13 +11,13 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
+                        <a href="{{ asset('') }}pengaduan/create" class="btn btn-sm btn-primary mx-2 my-2">Tambah Pengaduan</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Judul Pengaduan</th>
                                     <th>Lokasi Kejadian</th>
-                                    <th>Nama Pelapor</th>
                                     <th>Tanggal Pengaduan</th>
                                     <th>Status</th>
                                     <th>Opsi</th>
@@ -29,7 +29,6 @@
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$item->judul_pengaduan}}</td>
                                     <td>{{$item->lokasi_kejadian}}</td>
-                                    <td>{{$item->masyarakat->nama}}</td>
                                     <td>{{$item->tanggal_pengaduan}}</td>
                                     <td>
                                         @if ($item->status === '0')
