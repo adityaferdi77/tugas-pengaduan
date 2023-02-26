@@ -52,13 +52,6 @@
                             <i class="bi bi-people"></i><span> Data Pengaduan</span>
                         </a>
                     @endauth
-                    @auth('masyarakat')
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('pengaduan/create') }}">
-                            <i class="bi bi-people"></i><span> Buat Pengaduan</span>
-                        </a>
-                    </li>
-                @endauth
             </ul>
         </div>
     </div>

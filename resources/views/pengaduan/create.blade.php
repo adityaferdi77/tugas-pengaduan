@@ -49,6 +49,7 @@
                 <div class="invalid-feedback">{{$message}}</div>
               @enderror
                 <button type="submit" class="btn btn-primary">Kirim</button>
+                <a class="btn btn-primary my-2" href="{{route('pengaduan.index')}}">Kembali</a>
               </form>
           </div>
         </div>

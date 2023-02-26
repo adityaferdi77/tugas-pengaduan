@@ -7,7 +7,7 @@
             <div class="col-md-10">
                 <div class="card shadow">
                     <div class="card-header">
-                        <strong>Selamat datang, {{ \Auth::guard('petugas')->user()->nama_petugas }}</strong>
+                        <div class="alert alert-warning">Selamat datang, <b>{{ auth()->guard('petugas')->user()->nama_petugas }}</b></div>
                     </div>
                     <div class="row d-flex justify-content-center">
                     <div class="col-12 col-sm-6 col-md-3">

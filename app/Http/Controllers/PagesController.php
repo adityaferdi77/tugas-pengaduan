@@ -22,11 +22,21 @@ class PagesController extends Controller
 
     public function dashboard_masyarakat()
     {
-        return view('masyarakat.dashboard');
+        $masyarakat = Masyarakat::get();
+        $pengaduan = Pengaduan::where('status','0')->get();
+        $proses = Pengaduan::where('status','proses')->get();
+        $tanggapan = tanggapan::get();
+
+        return view('masyarakat.dashboard', [
+            'jml_masyarakat' => $masyarakat->count(),
+            'jml_pengaduan'=> $pengaduan->count(),
+            'jml_tanggapan'=> $tanggapan->count(),
+            'jml_proses'=> $proses->count(),
+            'jml_aduan_ku'=> $pengaduan,
+        ]);
     }
     public function dashboard_petugas()
     {
-        // $petugas = User::where('level','admin')->orWhere('level','petugas')->get();
         $masyarakat = Masyarakat::get();
         $pengaduan = Pengaduan::where('status','0')->get();
         $proses = Pengaduan::where('status','proses')->get();
@@ -34,7 +44,6 @@ class PagesController extends Controller
 
         return view('petugas.dashboard', [
             'jml_masyarakat' => $masyarakat->count(),
-            // 'jml_petugas'=> $petugas->count(),
             'jml_pengaduan'=> $pengaduan->count(),
             'jml_tanggapan'=> $tanggapan->count(),
             'jml_proses'=> $proses->count(),
