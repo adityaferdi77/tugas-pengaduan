@@ -32,13 +32,22 @@
                                     <td>{{$item->nama_petugas}}</td>
                                     <td>{{$item->no_telp}}</td>
                                     <td>{{$item->level}}</td>
-                                    <td>
+                                    {{-- <td>
                                         <form action="{{route('petugas.destroy', $item->id)}}" method="post" class="d-inline">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                                         </form>
-                                    </td>
+                                    </td> --}}
+                                    <td>
+                    <a href="{{ route('petugas.edit', $item->id) }}" class="btn btn-primary bi bi-pencil-square"></a>
+
+                    <form action="{{ route('petugas.destroy', $item->id) }}" class="d-inline-block" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" onclick="return confirm('Apakah anda yakin ingin menghapus ?')" class="btn btn-danger bi bi-trash" ></button>
+                    </form>
+                </td>
                                  </tr>
                                 @empty
                                     <tr >

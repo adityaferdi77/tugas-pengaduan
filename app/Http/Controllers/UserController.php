@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Petugas;
+use Illuminate\Support\Facades\Hash;
+
 class UserController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
         // return Petugas::all();
-        return view('petugas.index',[
+        return view('petugas.index', [
             'petugas' => Petugas::all()
         ]);
     }
@@ -73,7 +75,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $petugas = Petugas::where('id', $id)->first();
+
+        return view('petugas.edit', ['petugas' => $petugas]);
     }
 
     /**
@@ -85,7 +89,19 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $petugas = Petugas::find($id);
+
+        $petugas->update([
+            'nama_petugas' => $data['nama_petugas'],
+            'username' => $data['username'],
+            'password' => Hash::make($data['password']),
+            'no_telp' =>  $data['no_telp'],
+            'level' =>  $data['level'],
+        ]);
+
+        return redirect()->route('petugas.index');
     }
 
     /**
